@@ -3,6 +3,7 @@ import { Home } from "./Components/Home"
 import { Categories } from "./Components/Categories"
 import { Order } from "./Components/Order"
 import { useState } from "react"
+import { ItemDetail } from "./Components/ItemDetail"
 
 
 export const App = () =>{
@@ -10,17 +11,21 @@ export const App = () =>{
     const [openCart,setOpenCart] = useState(false)
     const [totalItem,settotalItem] = useState(0)
     const [totPrice,settotPrice] = useState(0)
+    const [clelem,clsetElem] = useState([])
+    console.log(clelem)
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home cart={cart} setCart={setCart} openCart={openCart} setOpenCart={setOpenCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice} />,
+      element: <Home clelem={clelem} clsetElem={clsetElem} cart={cart} setCart={setCart} openCart={openCart} setOpenCart={setOpenCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice} />,
     },{
       path:"/categories",
-      element:<Categories cart={cart} setCart={setCart} openCart={openCart} setOpenCart={setOpenCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice} />
+      element:<Categories clelem={clelem} clsetElem={clsetElem} cart={cart} setCart={setCart} openCart={openCart} setOpenCart={setOpenCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice} />,
+
     },{
       path:"/order",
       element:<Order cart={cart} setCart={setCart} openCart={openCart} setOpenCart={setOpenCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice}/>
     },
+  
   ]);
   return(
     <>

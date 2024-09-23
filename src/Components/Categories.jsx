@@ -6,8 +6,9 @@ import { FaStar } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
-export const Categories = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,totPrice,settotPrice})=>{
+export const Categories = ({clelem,clsetElem,cart,setCart,openCart,setOpenCart,totalItem,settotalItem,totPrice,settotPrice})=>{
 
 const [inp,setInp] = useState("")
 const [filterdCard,setfiltered] = useState([])
@@ -33,6 +34,7 @@ const handleCart = (elem) =>{
             draggable: true,
             progress: undefined,
             theme: "dark",
+            className:"toast-message"
         });
     }
     else{
@@ -46,10 +48,10 @@ const handleCart = (elem) =>{
             draggable: true,
             progress: undefined,
             theme: "dark",
+            className:"toast-message"
         });
         setCart([...cart,{...elem,quantity:1}])
         settotPrice(totPrice+elem.price)
-        console.log(filterdCard)
             settotalItem(totalItem+1)
         }
     }
@@ -93,7 +95,7 @@ setfiltered(changCat)
               <h1 className="text-lg font-bold"> {elem.name} </h1>
               <h1 className="font-semibold text-lg text-green-400">₹{elem.price} </h1>
           </div>
-          <p> {elem.desc.slice(0,70)}...  <a href="" className="text-blue-400">Read More</a> </p>
+          <p> {elem.desc.slice(0,70)}...  <NavLink onClick={()=>clsetElem(elem)} to={`/${elem.id}`} target="_self" className="text-blue-400">Read More</NavLink> </p>
           <div className="flex justify-between my-3 items-center">
              <section className="flex items-center gap-1"><FaStar className="text-yellow-400 text-xl" /> <h1 className="text-[20px] font-bold inline-block">  {elem.rating} </h1></section>
               <button onClick={()=> handleCart(elem)} className="bg-green-400 px-4 rounded-xl hover:bg-green-600 duration-150 py-3 text-white font-semibold">Add to Cart</button>
@@ -112,7 +114,7 @@ setfiltered(changCat)
               <h1 className="text-lg font-bold"> {elem.name} </h1>
               <h1 className="font-semibold text-lg text-green-400">₹{elem.price} </h1>
           </div>
-          <p> {elem.desc.slice(0,70)}...  <a href="" className="text-blue-400">Read More</a> </p>
+          <p> {elem.desc.slice(0,70)}...   <NavLink onClick={()=>clsetElem(elem)} to={`categories/${elem.id}`} target="_self" className="text-blue-400">Read More</NavLink>  </p>
           <div className="flex justify-between my-3 items-center">
              <section className="flex items-center gap-1"><FaStar className="text-yellow-400 text-xl" /> <h1 className="text-[20px] font-bold inline-block">  {elem.rating} </h1></section>
               <button onClick={()=> handleCart(elem)} className="bg-green-400 px-4 rounded-xl hover:bg-green-600 duration-150 py-3 text-white font-semibold">Add to Cart</button>

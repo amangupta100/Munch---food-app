@@ -34,13 +34,14 @@ export const Order = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,
     const handleDelete = (elem) =>{
         toast.info('Item deleted from cart', {
             position: "top-center",
-            autoClose: 5000,
+            autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
             theme: "dark",
+            className:"toast-message"
             });
      const newCart = cart.filter((curElem)=>curElem!=elem)
      setCart(newCart)
