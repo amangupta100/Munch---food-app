@@ -3,13 +3,15 @@ export default {
   content: ["./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
     screens:{
-      'mobile-m':'375px',
-      'mobile':"425px",
-      'tablet':"768px",
-      'laptop':"1024px",
-      'desktop':"1440px"
+      'desktop':{'max':"2400px"},
+      'laptop':{'max':'2200px'},
+      'lD':{'max':'1025px'},
+      'mtb': {'max': '880px'},
+      'tb': {'max': '768px'},
+      'lm': {'max': '426px'},
+      'mdm': {'max': '375px'},
+      'sm': {'max': '320px'},
     }
   },
   plugins: [],

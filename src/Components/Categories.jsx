@@ -68,9 +68,9 @@ setfiltered(changCat)
        <ToastContainer/>
 
       <h1 className="mx-16 my-4 text-lg font-medium font-serif">Find your favorite food</h1>
-      <div className="flex gap-4 mobile:flex-col  mobile:gap-2 mobile:items-start mobile:mx-16 items-center">
+      <div className="flex gap-4 lm:flex-col lm:items-start items-center px-16">
        
-      <h1 className="text-xl mx-16 mobile-m:mx-0">Filter :</h1>
+      <h1 className="text-xl ">Filter :</h1>
        <select name="" id="" value={cateCh} onChange={(e)=>handleSelect(e.currentTarget.value)} className="px-3 py-2 border-2 cursor-pointer border-gray-200 focus:outline-none">
         <option value="All">All</option>
         <option value="Lunch" className="px-3">Lunch</option>
@@ -79,9 +79,9 @@ setfiltered(changCat)
         <option value="Snacks">Snack</option>
        </select>
 
-       <input type="text" value={inp} onChange={(e)=> setInp(e.target.value)} placeholder="Search your favorite here..."  className="focus:outline-none text-lg rounded-xl mobile:w-[70%] px-4 laptop:w-[23%] w-[20%] py-2 border-2"/>
+       <input type="text" value={inp} onChange={(e)=> setInp(e.target.value)} placeholder="Search your favorite here..."  className="focus:outline-none text-lg rounded-xl lm:w-[70%] px-4  w-[20%] py-2 border-2"/>
       </div>
-       <div className="px-16 mobile:grid-cols-1 desktop:grid-cols-4 tablet:grid-cols-2 tablet:gap-12 grid laptop:grid-cols-3 grid-cols-4 relative gap-8 my-8">
+       <div className="px-16 grid grid-cols-4 relative lD:grid-cols-3 tb:grid-cols-2 lm:grid-cols-1 gap-8 my-8">
       {
         cateCh == "All" && filterdCard.length==0 ?
         FoodData.map((elem)=>{

@@ -1,6 +1,5 @@
 import FoodData from "./CardData"
 import { FaStar } from "react-icons/fa6";
-import { MdFavorite } from "react-icons/md";
 import '../index.css'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -41,15 +40,16 @@ export const Home = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,t
             settotalItem(totalItem+1)
         }
     }
+    
     return(
         <>
         <Navbar/>
-        <ToastContainer className="toast_mess"/>
+        <ToastContainer/>
         <h1 className="text-center text-xl my-5"> Menu List</h1>
-        <div className="px-16 grid desktop:grid-cols-4 tablet:grid-cols-2 mobile:grid-cols-1 laptop:grid-cols-3 relative gap-8 my-14">
+        <div className="px-16 grid grid-cols-4 lD:grid-cols-3 tb:grid-cols-2 lm:grid-cols-1 overflow-hidden relative gap-8 my-14">
            {FoodData.map((elem)=>{
               return(
-                <div key={elem.id} id="card" className="w-[100%] rounded-2xl relative h-[415px] bg-slate-100 hover:shadow-2xl hover:shadow-gray-600 duration-200 px-3 py-3">
+                <div key={elem.id} className="lm:h-[420px] rounded-2xl bg-slate-100 hover:shadow-xl hover:shadow-gray-400 duration-200 p-3">
                     <img src={elem.img} className="w-full rounded-2xl h-[180px]" alt="" />
               <div className="flex flex-col">
                 <div className="flex my-3 justify-between">

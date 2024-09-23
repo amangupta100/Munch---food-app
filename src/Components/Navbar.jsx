@@ -12,20 +12,20 @@ export const Navbar = ()=>{
     const [menu,setMenu] = useState(false)
 
     return(
-        <div className="w-full h-[90px] mobile:h-[80px] flex  items-center justify-between px-20 mobile:px-8 py-2 relative">
-       <NavLink to="/">  <img src={logo} alt="" onContextMenu={(e)=>e.preventDefault()} onDragStart={(e)=>e.preventDefault()} className='w-56 h-24 mobile:w-44'/> </NavLink>
-        <div className="flex justify-between laptop:flex mobile:hidden gap-8 items-center px-20">
+        <div className="w-full h-[85px] justify-between px-28 lm:px-10 laptop:px-20 lD:px-12 flex items-center">
+       <NavLink to="/">  <img src={logo} alt="" onContextMenu={(e)=>e.preventDefault()} onDragStart={(e)=>e.preventDefault()} className='w-[15vw] lD:w-[20vw] tb:w-[25vw] lm:w-[44vw]'/> </NavLink>
+        <div className="flex justify-between lm:hidden gap-8 items-center">
             <NavLink to="/"  style={({isActive})=>{
                 return isActive? {color:"white",backgroundColor:"gray",paddingLeft:"14px",paddingRight:"14px",paddingTop:"7px",paddingBottom:"7px",borderRadius:"12px"}:{}
-            }} className='text-lg'>Home</NavLink>
+            }} className='text-lg hover:text-gray-500'>Home</NavLink>
             <NavLink to="/categories" style={({isActive})=>{
                 return isActive? {color:"white",backgroundColor:"gray",paddingLeft:"14px",paddingRight:"14px",paddingTop:"7px",paddingBottom:"7px",borderRadius:"12px"}:{}
-            }} className='text-lg'>Categories</NavLink>
+            }} className='text-lg hover:text-gray-500'>Categories</NavLink>
             <NavLink to="/order" style={({isActive})=>{
                 return isActive? {color:"white",backgroundColor:"gray",paddingLeft:"14px",paddingRight:"14px",paddingTop:"7px",paddingBottom:"7px",borderRadius:"12px"}:{}
-            }} className='text-lg'>Orders</NavLink>
+            }} className='text-lg hover:text-gray-500'>Orders</NavLink>
         </div>
-        <RxHamburgerMenu onClick={()=>setMenu(!menu)} className='text-2xl laptop:hidden mobile:inline-block'/>
+        <RxHamburgerMenu onClick={()=>setMenu(!menu)} className='text-2xl desktop:hidden lm:inline'/>
         <div className={`fixed ${menu?'inline-block':"hidden"} duration-300 flex flex-col gap-4 justify-center items-center w-full h-full top-0 right-0 bg-slate-400 backdrop-blur-[7px] mix-blend-multiply z-50`}>
         <IoCloseSharp onClick={()=>setMenu(!menu)} className='text-black absolute right-5 top-5 text-3xl'/>
         <NavLink to="/"  style={({isActive})=>{
