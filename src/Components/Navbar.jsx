@@ -12,7 +12,7 @@ export const Navbar = ()=>{
     const [menu,setMenu] = useState(false)
 
     return(
-        <div className="w-full h-[85px] justify-between px-28 lm:px-10 laptop:px-20 lD:px-12 flex items-center">
+        <div className="w-full h-[85px] justify-between px-12 lm:px-10 laptop:px-20 lD:px-12 flex items-center">
        <NavLink to="/">  <img src={logo} alt="" onContextMenu={(e)=>e.preventDefault()} onDragStart={(e)=>e.preventDefault()} className='w-[15vw] lD:w-[20vw] tb:w-[25vw] lm:w-[44vw]'/> </NavLink>
         <div className="flex justify-between lm:hidden gap-8 items-center">
             <NavLink to="/"  style={({isActive})=>{

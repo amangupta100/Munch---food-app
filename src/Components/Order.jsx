@@ -29,6 +29,9 @@ export const Order = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,
     })
     settotalItem(totalItem-1)
     settotPrice(totPrice-ele.price)
+    setCart((prev)=>{
+       return prev.filter((elem)=> elem.quantity>0)
+    })
     }
 
     const handleDelete = (elem) =>{
@@ -48,7 +51,7 @@ export const Order = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,
      settotalItem(totalItem-elem.quantity)
      settotPrice(totPrice-elem.price* elem.quantity)
     }
-
+  console.log(cart)
     return(
         <>
         <div>

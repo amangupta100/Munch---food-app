@@ -88,8 +88,8 @@ setfiltered(changCat)
         cateCh == "All" && filterdCard.length==0 ?
         FoodData.map((elem)=>{
             return(
-             <div key={elem.id} id="card" className="w-[100%] rounded-2xl relative h-[415px] bg-slate-100 hover:shadow-2xl hover:shadow-gray-600 duration-200 px-3 py-3">
-              <img src={elem.img} className="w-full rounded-2xl h-[180px]" alt="" />
+             <div key={elem.id} id="card" className="w-[100%] lm:h-[390px] rounded-2xl relative h-[415px] bg-slate-100 hover:shadow-2xl hover:shadow-gray-600 duration-200 px-3 py-3">
+              <img src={elem.img} className="w-full lm:h-[150px] rounded-2xl h-[180px]" alt="" />
         <div className="flex flex-col">
           <div className="flex my-3 justify-between">
               <h1 className="text-lg font-bold"> {elem.name} </h1>

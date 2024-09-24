@@ -12,7 +12,6 @@ export const App = () =>{
     const [totalItem,settotalItem] = useState(0)
     const [totPrice,settotPrice] = useState(0)
     const [clelem,clsetElem] = useState([])
-    console.log(clelem)
   const router = createBrowserRouter([
     {
       path: "/",
@@ -25,7 +24,10 @@ export const App = () =>{
       path:"/order",
       element:<Order cart={cart} setCart={setCart} openCart={openCart} setOpenCart={setOpenCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice}/>
     },
-  
+    {
+    path:`itemDet/:${clelem.id}`,
+    element:<ItemDetail clelem={clelem}/>
+    },
   ]);
   return(
     <>
