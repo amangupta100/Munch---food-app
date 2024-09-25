@@ -25,8 +25,8 @@ export const App = () =>{
       element:<Order cart={cart} setCart={setCart} openCart={openCart} setOpenCart={setOpenCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice}/>
     },
     {
-    path:`itemDet/:${clelem.id}`,
-    element:<ItemDetail clelem={clelem}/>
+    path:`:${clelem.id}`,
+    element:<ItemDetail clelem={clelem} clsetElem={clsetElem} cart={cart} setCart={setCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice}/>
     },
   ]);
   return(

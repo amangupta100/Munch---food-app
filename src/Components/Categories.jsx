@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Footer } from "./Footer";
 
 export const Categories = ({clelem,clsetElem,cart,setCart,openCart,setOpenCart,totalItem,settotalItem,totPrice,settotPrice})=>{
 
@@ -81,21 +82,21 @@ setfiltered(changCat)
         <option value="Snacks">Snack</option>
        </select>
 
-       <input type="text" value={inp} onChange={(e)=> setInp(e.target.value)} placeholder="Search your favorite here..."  className="focus:outline-none text-lg rounded-xl lm:w-[70%] px-4  w-[20%] py-2 border-2"/>
+       <input type="text" value={inp} onChange={(e)=> setInp(e.target.value)} placeholder="Search your favorite here..."  className="focus:outline-none text-lg rounded-xl lm:w-[90%] px-4  w-[20%] py-2 border-2"/>
       </div>
-       <div className="px-16 grid grid-cols-4 relative lD:grid-cols-3 tb:grid-cols-2 lm:grid-cols-1 gap-8 my-8">
+       <div className="px-16 lm:flex lm:flex-col lm:items-center grid grid-cols-4 relative lD:grid-cols-3 tb:grid-cols-2 lm:grid-cols-1 gap-8 my-8">
       {
         cateCh == "All" && filterdCard.length==0 ?
         FoodData.map((elem)=>{
             return(
-             <div key={elem.id} id="card" className="w-[100%] lm:h-[390px] rounded-2xl relative h-[415px] bg-slate-100 hover:shadow-2xl hover:shadow-gray-600 duration-200 px-3 py-3">
-              <img src={elem.img} className="w-full lm:h-[150px] rounded-2xl h-[180px]" alt="" />
+             <div key={elem.id} id="card" className="w-[100%] lm:h-[380px] lm:w-[90%] rounded-2xl relative h-[415px] bg-slate-100 hover:shadow-2xl hover:shadow-gray-600 duration-200 px-3 py-3">
+              <img src={elem.img} className="w-full lm:h-[140px] rounded-2xl h-[180px]" alt="" />
         <div className="flex flex-col">
           <div className="flex my-3 justify-between">
               <h1 className="text-lg font-bold"> {elem.name} </h1>
               <h1 className="font-semibold text-lg text-green-400">₹{elem.price} </h1>
           </div>
-          <p> {elem.desc.slice(0,70)}...  <NavLink onClick={()=>clsetElem(elem)} to={`/${elem.id}`} target="_self" className="text-blue-400">Read More</NavLink> </p>
+          <p> {elem.desc.slice(0,70)}...  <NavLink to={`${elem.id}`} target="_self" className="text-blue-400"><button onClick={()=>clsetElem(elem)}> Read More </button></NavLink> </p>
           <div className="flex justify-between my-3 items-center">
              <section className="flex items-center gap-1"><FaStar className="text-yellow-400 text-xl" /> <h1 className="text-[20px] font-bold inline-block">  {elem.rating} </h1></section>
               <button onClick={()=> handleCart(elem)} className="bg-green-400 px-4 rounded-xl hover:bg-green-600 duration-150 py-3 text-white font-semibold">Add to Cart</button>
@@ -114,7 +115,7 @@ setfiltered(changCat)
               <h1 className="text-lg font-bold"> {elem.name} </h1>
               <h1 className="font-semibold text-lg text-green-400">₹{elem.price} </h1>
           </div>
-          <p> {elem.desc.slice(0,70)}...   <NavLink onClick={()=>clsetElem(elem)} to={`categories/${elem.id}`} target="_self" className="text-blue-400">Read More</NavLink>  </p>
+          <p> {elem.desc.slice(0,70)}...   <NavLink to={`${elem.id}`} target="_self" className="text-blue-400"><button onClick={()=>clsetElem(elem)}> Read More </button></NavLink>  </p>
           <div className="flex justify-between my-3 items-center">
              <section className="flex items-center gap-1"><FaStar className="text-yellow-400 text-xl" /> <h1 className="text-[20px] font-bold inline-block">  {elem.rating} </h1></section>
               <button onClick={()=> handleCart(elem)} className="bg-green-400 px-4 rounded-xl hover:bg-green-600 duration-150 py-3 text-white font-semibold">Add to Cart</button>
@@ -124,6 +125,7 @@ setfiltered(changCat)
             )
            })
       }
+      
         </div>
         </>
     )

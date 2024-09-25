@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logo from '../assets/munchin-high-resolution-logo-transparent.svg'
+import logo from '../assets/munchin-high-resolution-logo-transparent-cropped.svg'
 import { NavLink } from 'react-router-dom'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseSharp } from "react-icons/io5";
@@ -23,7 +23,7 @@ export const Navbar = ()=>{
             }} className='text-lg hover:text-gray-500'>Categories</NavLink>
             <NavLink to="/order" style={({isActive})=>{
                 return isActive? {color:"white",backgroundColor:"gray",paddingLeft:"14px",paddingRight:"14px",paddingTop:"7px",paddingBottom:"7px",borderRadius:"12px"}:{}
-            }} className='text-lg hover:text-gray-500'>Orders</NavLink>
+            }} className='text-lg hover:text-gray-500'>Cart</NavLink>
         </div>
         <RxHamburgerMenu onClick={()=>setMenu(!menu)} className='text-2xl desktop:hidden lm:inline'/>
         <div className={`fixed ${menu?'inline-block':"hidden"} duration-300 flex flex-col gap-4 justify-center items-center w-full h-full top-0 right-0 bg-slate-400 backdrop-blur-[7px] mix-blend-multiply z-50`}>
@@ -36,7 +36,7 @@ export const Navbar = ()=>{
             }} className='text-[23px] text-black bg-blend-difference  px-2 py-3 rounded-lg '>Categories</NavLink>
             <NavLink to="/order" style={({isActive})=>{
                 return isActive? {color:"white",backgroundColor:"black",paddingLeft:"14px",paddingRight:"14px",paddingTop:"7px",paddingBottom:"7px",borderRadius:"12px"}:{}
-            }} className='text-[23px] text-black bg-blend-difference  px-2 py-3 rounded-lg '>Orders</NavLink>
+            }} className='text-[23px] text-black bg-blend-difference  px-2 py-3 rounded-lg '>Cart</NavLink>
             <div className="flex w-full flex-col gap-1 absolute bottom-2">
            <div className="flex justify-center gap-4">
            <FaLinkedin className="text-4xl"/>

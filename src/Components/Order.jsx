@@ -51,7 +51,6 @@ export const Order = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,
      settotalItem(totalItem-elem.quantity)
      settotPrice(totPrice-elem.price* elem.quantity)
     }
-  console.log(cart)
     return(
         <>
         <div>
