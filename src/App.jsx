@@ -28,6 +28,10 @@ export const App = () =>{
     path:`:${clelem.id}`,
     element:<ItemDetail clelem={clelem} clsetElem={clsetElem} cart={cart} setCart={setCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice}/>
     },
+    {
+      path:`categories/:${clelem.id}`,
+      element:<ItemDetail clelem={clelem} clsetElem={clsetElem} cart={cart} setCart={setCart} totalItem={totalItem} settotalItem={settotalItem} totPrice={totPrice} settotPrice={settotPrice}/>
+      },
   ]);
   return(
     <>

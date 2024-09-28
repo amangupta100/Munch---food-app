@@ -59,16 +59,16 @@ export const ItemDetail = ({clelem,clsetElem,cart,setCart,totalItem,settotalItem
      }
     return(
         <>
-        <Navbar/>
+        <Navbar cart={cart}/>
        <ToastContainer/>
-        <div className="px-8 my-14">
+        <div className="px-8 lm:px-7 my-14">
        
         <div className="flex lm:flex-col lm:items-center gap-20 lm:gap-7">
-        <img src={clelem.img} className="w-[500px] hover:scale-[1.02] duration-150 lm:h-[200px] lm:w-[300px] rounded-lg h-[380px]"/>
+        <img src={clelem.img} className="w-[380px] hover:scale-[1.02] duration-150 lm:h-[180px] lm:w-[300px] rounded-lg h-[250px]"/>
        <div className=" w-[45%] lm:w-[100%]">
        <h1 className="text-xl"> {clelem.name} </h1>
        <div className="flex items-center gap-2  ">
-       <h1 className="text-xl "> Price :  </h1> <h1 className="text-xl font-bold text-green-400"> {clelem.price} </h1> 
+       <h1 className="text-xl "> Price :  </h1> <h1 className="text-xl font-bold text-green-400">₹ {clelem.price} </h1> 
        </div>
        <p className="text-lg my-3"> {clelem.desc} </p>
       <div className="flex  items-center">

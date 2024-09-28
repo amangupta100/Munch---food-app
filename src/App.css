@@ -1,0 +1,8 @@
+
+.myDiv{
+display: none;
+}
+
+.hovCont:hover ~ .myDiv{
+   display: block;
+}
