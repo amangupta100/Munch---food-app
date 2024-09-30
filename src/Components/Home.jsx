@@ -13,7 +13,7 @@ export const Home = ({clelem,clsetElem,cart,setCart,openCart,setOpenCart,totalIt
         if(cart.find((curElem)=> curElem.id == elem.id)){
             toast.info('Item already in cart', {
                 position: "top-center",
-                autoClose: 3000,
+                autoClose: 1500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -27,7 +27,7 @@ export const Home = ({clelem,clsetElem,cart,setCart,openCart,setOpenCart,totalIt
  
             toast.success('Item added in cart', {
                 position: "top-center",
-                autoClose: 3000,
+                autoClose: 1500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,

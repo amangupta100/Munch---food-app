@@ -38,7 +38,7 @@ export const Order = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,
     const handleDelete = (elem) =>{
         toast.info('Item deleted from cart', {
             position: "top-center",
-            autoClose: 3000,
+            autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -58,7 +58,7 @@ export const Order = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,
             setCart([])
             toast.info('All Items removed from cart', {
                 position: "top-center",
-                autoClose: 3000,
+                autoClose: 1500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -115,15 +115,15 @@ export const Order = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,
     </div>
 
 }
-<div className="flex items-center justify-between px-14 py-5">
-  <NavLink to="/">  <button className='px-5 py-2 text-white rounded-lg hover:bg-green-500 duration-200 bg-green-400'>Contiue Shopping</button></NavLink>
-    <button onClick={()=>handleClearCart()} className='px-5 py-2 text-white rounded-lg hover:bg-red-500 duration-200 bg-red-400'>Clear All</button>
+<div className="flex items-center justify-between lm:px-0 px-14 py-5">
+  <NavLink to="/">  <button className='px-5 py-2  lm:px-3 text-white rounded-lg hover:bg-green-500 duration-200 bg-green-400'>Contiue Shopping</button></NavLink>
+    <button onClick={()=>handleClearCart()} className='px-5 py-2 lm:px-3 text-white rounded-lg hover:bg-red-500 duration-200 bg-red-400'>Clear All</button>
 </div>
 
-<div className="w-[40%] h-40 py-10">
+<div className="w-[40%] lm:w-[75%] h-40 py-10">
     <h1 className="text-xl font-medium">Items : {totalItem} </h1>
-    <h1 className="text-xl font-medium">Total Amount : {totPrice} </h1>
-    <button className="w-[30%] my-3 bg-green-400 hover:bg-green-600 duration-200 text-white text-lg py-3 rounded-lg">CheckOut</button>
+    <h1 className="text-xl font-medium">Total Amount : ₹{totPrice} </h1>
+    <button className="w-[30%] lm:w-[65%] lm:text-[16px] lm:py-2 my-3 bg-green-400 hover:bg-green-600 duration-200 text-white text-lg py-3 rounded-lg">CheckOut</button>
 </div>
 </div>
 

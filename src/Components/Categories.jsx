@@ -30,7 +30,7 @@ const handleCart = (elem) =>{
     if(cart.find((curElem)=> curElem.id == elem.id)){
         toast.info('Item already in cart', {
             position: "top-center",
-            autoClose: 3000,
+            autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -44,7 +44,7 @@ const handleCart = (elem) =>{
         
         toast.success('Item added in cart', {
             position: "top-center",
-            autoClose: 3000,
+            autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -83,12 +83,12 @@ useEffect(()=>{setfiltered(filterI)},[filterI])
        <button onClick={()=>handleFilter()} className="px-4 py-2 rounded-lg bg-slate-200 hover:bg-slate-400 text-lg"> Filter </button>
  
     
-    <div className={`${filterOpt?"block":"hidden"} lm:shadow-2xl lm:shadow-gray-500 lm:w-[55%] lm:px-2 lm:py-16 px-7 h-full py-5 w-[350px] right-0 top-0 bg-slate-300 fixed z-50   shadow-xl shadow-gray-400`}>
+    <div className={`${filterOpt?"block":"hidden"} lm:shadow-2xl lm:shadow-gray-500 backdrop-blur-xl mix-blend-multiply lm:w-[65%] lm:px-2 lm:py-16 px-7 h-full py-5 w-[350px] right-0 top-0 bg-slate-300 fixed z-50   shadow-xl shadow-gray-400`}>
      
      <div className="flex flex-col gap-3">
      <div className="flex py-2 items-center gap-3">
     <h1 className="text-xl lm:text-lg inline-block">Category :</h1>
-     <select name="" id="" value={cateCh} onChange={(e)=>setCategory(e.target.value)} className="px-3 lm:w-[35%] w-[40%] py-2 border-2 cursor-pointer border-gray-200 focus:outline-none">
+     <select name="" id="" value={cateCh} onChange={(e)=>setCategory(e.target.value)} className="px-3 lm:w-[45%] w-[40%] bg-black text-white py-2 border-2 cursor-pointer border-gray-200 focus:outline-none">
       <option value="All">All</option>
       <option value="Lunch" className="px-3">Lunch</option>
       <option value="Breakfast">Breakfast</option>
@@ -100,7 +100,7 @@ useEffect(()=>{setfiltered(filterI)},[filterI])
 
     <div className="flex py-4 items-center gap-3">
     <h1 className="text-xl lm:text-lg inline-block">Rating :</h1>
-     <select name="" id=""  value={rating} onChange={(e)=>setRating(e.target.value)} className="px-3 w-[40%] lm:w-[35%] py-2 border-2 cursor-pointer border-gray-200 focus:outline-none">
+     <select name="" id=""  value={rating} onChange={(e)=>setRating(e.target.value)} className="px-3 bg-black text-white w-[40%] lm:w-[35%] py-2 border-2 cursor-pointer border-gray-200 focus:outline-none">
       <option value="2"> {"2"} </option>
       <option value="3" className="px-3"> {"3"} </option>
       <option value="4"> {"4"} </option>
