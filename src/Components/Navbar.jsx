@@ -8,6 +8,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
 import '../App.css'
+import { CiDark } from "react-icons/ci";
+
 
 export const Navbar = ({cart})=>{
    
@@ -15,7 +17,7 @@ export const Navbar = ({cart})=>{
     return(
         <div className="relative">
         
-         <div className="w-full h-[85px] justify-between px-12 lm:px-10 laptop:px-20 lD:px-12 flex items-center">
+         <div className="w-full h-[85px] justify-between px-12 lm:px-5 laptop:px-20 lD:px-12 flex items-center">
              
          <NavLink to="/">  <img src={logo} alt="" onContextMenu={(e)=>e.preventDefault()} onDragStart={(e)=>e.preventDefault()} className='w-[15vw] lD:w-[20vw] tb:w-[25vw] lm:w-[44vw]'/> </NavLink>
         <div className="flex justify-between relative lm:hidden gap-8 items-center">
