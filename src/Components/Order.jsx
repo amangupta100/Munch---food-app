@@ -77,7 +77,7 @@ export const Order = ({cart,setCart,openCart,setOpenCart,totalItem,settotalItem,
         <div>
             <ToastContainer/>
 <Navbar cart={cart}/>
-<div className="py-7 relative px-10">
+<div className="py-7 relative px-10 lm:px-5">
 <h1 className=" text-2xl font-semibold">My Orders</h1>
 
 {

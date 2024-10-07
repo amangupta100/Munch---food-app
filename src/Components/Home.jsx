@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Navbar } from "./Navbar";
 import { NavLink } from "react-router-dom";
 import { Footer } from "./Footer";
+import img from '../assets/fernando-andrade-_P76trHTWDE-unsplash.jpg'
 
 export const Home = ({clelem,clsetElem,cart,setCart,openCart,setOpenCart,totalItem,settotalItem,totPrice,settotPrice}) =>{
 
@@ -44,32 +45,59 @@ export const Home = ({clelem,clsetElem,cart,setCart,openCart,setOpenCart,totalIt
     
     return(
         <div className="w-full h-full">
-        <Navbar cart={cart}/>
         <ToastContainer/>
-        <h1 className="text-center text-xl my-5"> Menu List</h1>
-        <div className="px-16 grid grid-cols-4 lm:grid-cols-2 lm:px-5 lD:grid-cols-3 tb:grid-cols-2 gap-8 lm:gap-4 my-14">
+        <Navbar cart={cart}/>
+       
+     <div className="px-16 tb:px-12 lm:px-5">
+
+     <div className=" border-2 border-slate-200 w-full">
+      <div className="flex lm:flex-col lm:gap-2">
+
+      <div className="flex w-1/2 lm:w-full lm:py-7 flex-col items-center justify-center">
+      <div className="flex items-center gap-2">
+            <p className='w-10 h-[2px] bg-[#414141] '></p>
+           <h1 className='font-medium text-[#414141]'>Delicious Food</h1>
+           </div>
+
+           <h1 className='font-medium text-4xl lm:text-2xl text-[#414141] first-letter:text-6xl tb:first-letter:text-5xl tb:text-3xl'>Fastest Delivery Ever</h1>
+         
+          <NavLink to="/categories">
+          <button className="flex items-center gap-2 my-3 px-8 py-4 bg-slate-200 hover:bg-slate-400 duration-300 ease-in-out transition-all hover:rounded-full hover:text-white">
+           <h1 className='font-medium text-[#414141]'>SHOP NOW</h1>
+            <p className='w-10 h-[2px] bg-[#414141] '></p>
+           </button>
+          </NavLink>
+
+      </div>
+      
+      <img src={img} className="w-1/2 lm:w-full h-[490px] lD:h-[390px] tb:h-[320px]" alt="" />
+
+      </div>
+      </div>
+
+
+
+     </div>
+
+     <h1 className="text-center text-2xl my-8"> Menu List</h1>
+        <div className="px-16 lm:px-5 lm:flex lm:flex-col lm:items-center grid grid-cols-3 relative lD:grid-cols-3 tb:grid-cols-2 lm:grid-cols-1 gap-8 my-8">
            {FoodData.map((elem)=>{
-              return(
-                
-                <div key={elem.id} className="lm:h-[265px] lm:p-0 lm:bg-none relative divCont lm:w-[100%] rounded-2xl bg-slate-100 hover:shadow-xl hover:shadow-gray-400 duration-200 p-3">
-                    
-                    <img src={elem.img} className="w-full  duration-150 rounded-2xl lm:h-[110px] h-[180px]" alt="" />
-              <div className="flex flex-col">
-                <div className="flex my-3 lm:my-0 lm:flex-col lm:gap-1 justify-between">
-                    <h1 className="text-lg font-bold lm:text-[15px]"> {elem.name} </h1>
-                    <h1 className="font-semibold text-lg text-green-400">₹{elem.price} </h1>
-                </div>
-                <p className="lm:text-[15px] "> {elem.desc.slice(0,30)}...   <NavLink to={`${elem.id}`} target="_self" className="text-blue-400"><button onClick={()=>clsetElem(elem)}> Read More </button></NavLink></p>
-                <div className="flex justify-between lm:items-start lm:flex-col my-3 lm:my-0 items-center">
-                   <section className="flex lm:hidden items-center gap-1"><FaStar className="text-yellow-400 text-xl" /> <h1 className="text-[20px] lm:text-[16px] font-bold inline-block">  {elem.rating} </h1></section>
-                    <button onClick={()=> handleCart(elem)} className="bg-green-400 absolute bottom-0 left-0 px-4 lm:my-1 rounded-xl lm:py-2 lm:text-[15px] lm:w-full hover:bg-green-600 duration-150 py-3 text-white font-semibold">Add to Cart</button>
-                </div>
-              </div>
-          </div>
-              )
+        return(
+            <div className="w-full desktop:h-[210px] h-[170px] lm:h-[220px] gap-3 bg-slate-100 hover:shadow-xl lm:shadow-xl rounded-2xl items-center flex lm:gap-8 p-3" key={elem.id}>
+            <div className="flex flex-col gap-1">
+                <h1 className="font-bold text-[17px] ">{elem.name}</h1>
+                <h1 className="font-semibold">₹{elem.price}</h1>
+                <p> {elem.desc.slice(0,25)}... <NavLink to={`${elem.id}`} target="_self" className="text-blue-400"><button onClick={()=>clsetElem(elem)}> Read More </button></NavLink> </p>
+                <button onClick={()=> handleCart(elem)} className=" rounded-xl hover:bg-slate-300 font-bold text-lg px-7 py-2 text-green-600 bg-white my-2">Add</button>
+            </div>
+            <img src={elem.img} className="w-full h-[76%] max-w-[50%] rounded-xl " alt="" />
+          
+           </div>
+        )
             })}
         </div>
-        <Footer/>
+
+<Footer/>
         </div>
     )
 }

@@ -9,6 +9,7 @@ import { FaGithub } from "react-icons/fa";
 import { CiShoppingCart } from "react-icons/ci";
 import '../App.css'
 import { CiDark } from "react-icons/ci";
+import { CiSearch } from "react-icons/ci";
 
 
 export const Navbar = ({cart})=>{
@@ -17,10 +18,11 @@ export const Navbar = ({cart})=>{
     return(
         <div className="relative">
         
-         <div className="w-full h-[85px] justify-between px-12 lm:px-5 laptop:px-20 lD:px-12 flex items-center">
+         <div className="w-full h-[85px]  justify-between  px-12 lm:px-5 laptop:px-20 lD:px-12 flex items-center">
              
          <NavLink to="/">  <img src={logo} alt="" onContextMenu={(e)=>e.preventDefault()} onDragStart={(e)=>e.preventDefault()} className='w-[15vw] lD:w-[20vw] tb:w-[25vw] lm:w-[44vw]'/> </NavLink>
         <div className="flex justify-between relative lm:hidden gap-8 items-center">
+            <NavLink to="/categories"> <CiSearch  className='text-2xl'/> </NavLink>
             <NavLink to="/"  style={({isActive})=>{
                 return isActive? {color:"white",backgroundColor:"gray",paddingLeft:"14px",paddingRight:"14px",paddingTop:"7px",paddingBottom:"7px",borderRadius:"12px"}:{}
             }} className='text-lg hover:text-gray-500'>Home</NavLink>
@@ -30,9 +32,13 @@ export const Navbar = ({cart})=>{
             <NavLink to="/order" style={({isActive})=>{
                 return isActive? {color:"white",backgroundColor:"gray",paddingLeft:"14px",paddingRight:"14px",paddingTop:"7px",paddingBottom:"7px",borderRadius:"12px"}:{}
             }} className='text-lg hover:text-gray-500 relative'> <CiShoppingCart className='text-4xl'/> <h1 className='absolute right-[-10px] top-[-30%] bg-slate-400 px-2 rounded-full text-[16px] text-white '> {cart.length} </h1> </NavLink>
+
         </div>
+        
+        <div className="flex gap-3 desktop:hidden  lm:flex">
+        <NavLink to="/categories"> <CiSearch  className='text-2xl'/> </NavLink>
         <RxHamburgerMenu onClick={()=>setMenu(!menu)} className='text-2xl desktop:hidden lm:inline'/>
-       
+        </div>
       
 
        <div className={`fixed ${menu?'inline-block':"hidden"} duration-500 flex flex-col gap-4 backdrop-blur-[7px] mix-blend-multiply justify-center items-center w-full h-full top-0 right-0 bg-slate-400  z-50`}>
